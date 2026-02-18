@@ -1,58 +1,60 @@
-new Swiper(".heroSwiper", {
-loop:true,
-autoplay:{delay:3000}
-});
+new Swiper(".heroSwiper",{loop:true,autoplay:{delay:3000}});
+new Swiper(".activitySwiper",{loop:true,breakpoints:{
+0:{slidesPerView:1},768:{slidesPerView:2},1024:{slidesPerView:3}
+}});
 
-new Swiper(".activitySwiper", {
-slidesPerView:3,
-spaceBetween:20,
-loop:true,
-breakpoints:{
-0:{slidesPerView:1},
-768:{slidesPerView:2},
-1024:{slidesPerView:3}
+function scrollToSection(id){
+document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
-});
+function openMore(){
+window.open("https://wa.me/919679548741?text=I want full Andaman tour details");
+}
 
 const packages=[
-"3N/4D Budget Tour",
-"4N/5D Andaman Delight",
-"5N/6D Honeymoon Special",
-"6N/7D Family Package",
-"Luxury 5N Tour",
-"Adventure Special",
-"Neil Island Tour",
-"Havelock Premium",
-"Rangat Baratang",
-"Corporate Group",
-"Student Tour",
-"Romantic Escape",
-"Island Explorer",
-"Scuba Combo",
-"Complete 8N Tour"
+{
+name:"Honeymoon Special (5N/6D)",
+price:"₹24,999",
+img:"https://images.unsplash.com/photo-1523438885200-e635ba2c371e",
+details:"Romantic beach stay, candle dinner, private cab"
+},
+{
+name:"Family Holiday Package",
+price:"₹19,999",
+img:"https://images.unsplash.com/photo-1509099836639-18ba1795216d",
+details:"Family hotels, sightseeing, kids friendly"
+},
+{
+name:"Luxury Andaman Tour",
+price:"₹39,999",
+img:"https://images.unsplash.com/photo-1493558103817-58b2924bce98",
+details:"Luxury resorts, premium cruise, private guide"
+},
+{
+name:"Adventure Tour",
+price:"₹29,999",
+img:"https://images.unsplash.com/photo-1544551763-46a013bb70d5",
+details:"Scuba, sea walk, snorkeling included"
+}
 ];
 
 const container=document.getElementById("packageContainer");
-
-packages.forEach(pkg=>{
+packages.forEach(p=>{
 container.innerHTML+=`
 <div class="card">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
-<h3>${pkg}</h3>
-<p>Starting ₹19,999</p>
-<button onclick="book('${pkg}')">Book Now</button>
+<img src="${p.img}">
+<h3>${p.name}</h3>
+<p>${p.price}</p>
+<button onclick='openPopup("${p.name}","${p.price}","${p.details}")'>View Details</button>
 </div>`;
 });
 
-function book(title){
-window.open(`https://wa.me/919679548741?text=I want to book ${title}`,"_blank");
+function openPopup(title,price,details){
+document.getElementById("popup").style.display="block";
+popupTitle.innerText=title;
+popupPrice.innerText=price;
+popupDetails.innerText=details;
+popupBtn.onclick=()=>window.open(
+`https://wa.me/919679548741?text=I want to book ${title} (${price})`
+);
 }
-
-document.getElementById("bookingForm").addEventListener("submit",function(e){
-e.preventDefault();
-let name=name.value;
-let phone=phone.value;
-let msg=message.value;
-
-window.open(`https://wa.me/919679548741?text=Name:${name}%0APhone:${phone}%0AMessage:${msg}`);
-});
+function closePopup(){popup.style.display="none";}
