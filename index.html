@@ -3,98 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yatra Andaman | Tour & Travel</title>
+
+<title>Yatra Andaman | Andaman Tour Packages</title>
+<meta name="description" content="Yatra Andaman – Honeymoon, Family, Luxury and Adventure Andaman tour packages with hotels, cabs and water activities.">
+<meta name="keywords" content="Andaman tour, Andaman honeymoon package, Andaman travel agency, Yatra Andaman">
 
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
 </head>
+
 <body>
 
-<header>
-  <div class="logo">YATRA ANDAMAN</div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#packages">Packages</a>
-    <a href="#activities">Activities</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+<!-- TOP BANNER -->
+<div class="top-banner">
+  <div class="banner-logo">
+    <img src="logo.jpg" alt="Yatra Andaman Logo">
+  </div>
+
+  <div class="banner-buttons">
+    <button onclick="scrollToSection('packages')">Hotels</button>
+    <button onclick="scrollToSection('cabs')">Cabs</button>
+    <button onclick="scrollToSection('activities')">Activities</button>
+    <button onclick="openMore()">More</button>
+  </div>
+
+  <div class="banner-contact">
+    📍 NimbuTala Rangat, North & Middle Andaman  
+    <br>📞 9679548741 | 9434267939
+  </div>
+</div>
 
 <!-- HERO SLIDER -->
 <div class="swiper heroSwiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
-    </div>
-    <div class="swiper-slide">
-      <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
-    </div>
-    <div class="swiper-slide">
-      <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e">
-    </div>
+    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"></div>
+    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98"></div>
+    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21"></div>
   </div>
 </div>
 
+<!-- PACKAGES -->
 <section id="packages" class="section">
-<h2>Our Premium Packages</h2>
-<div id="packageContainer" class="grid"></div>
+<h2>Andaman Tour Packages</h2>
+<div class="grid" id="packageContainer"></div>
 </section>
 
+<!-- CABS -->
+<section id="cabs" class="section gray">
+<h2>Cab Services</h2>
+<div class="grid">
+  <div class="card"><h3>Airport Pickup & Drop</h3></div>
+  <div class="card"><h3>Full Day Sightseeing</h3></div>
+  <div class="card"><h3>Inter Island Transfers</h3></div>
+</div>
+</section>
+
+<!-- ACTIVITIES -->
 <section id="activities" class="section">
 <h2>Water Activities</h2>
 
 <div class="swiper activitySwiper">
   <div class="swiper-wrapper">
-
     <div class="swiper-slide card">
       <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5">
-      <h3>Scuba Diving</h3>
-      <p>₹3500</p>
+      <h3>Scuba Diving</h3><p>₹3500</p>
     </div>
-
-    <div class="swiper-slide card">
-      <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
-      <h3>Snorkeling</h3>
-      <p>₹1000</p>
-    </div>
-
     <div class="swiper-slide card">
       <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1">
-      <h3>Sea Walk</h3>
-      <p>₹3500</p>
+      <h3>Sea Walk</h3><p>₹3500</p>
     </div>
-
+    <div class="swiper-slide card">
+      <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
+      <h3>Snorkeling</h3><p>₹1000</p>
+    </div>
     <div class="swiper-slide card">
       <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
-      <h3>Parasailing</h3>
-      <p>₹3000</p>
+      <h3>Parasailing</h3><p>₹3000</p>
     </div>
-
   </div>
 </div>
-
-</section>
-
-<section id="contact" class="section contact">
-<h2>Book Your Tour</h2>
-
-<form id="bookingForm">
-<input type="text" id="name" placeholder="Your Name" required>
-<input type="tel" id="phone" placeholder="Phone Number" required>
-<textarea id="message" placeholder="Your Requirement"></textarea>
-<button type="submit">Book Now</button>
-</form>
-
-<p>WhatsApp: 9679548741</p>
-<p>Email: yatratoursandtravels@gmail.com</p>
-
 </section>
 
 <footer>
 © 2026 Yatra Andaman | All Rights Reserved
 </footer>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">×</span>
+    <h2 id="popupTitle"></h2>
+    <p id="popupPrice"></p>
+    <p id="popupDetails"></p>
+    <button id="popupBtn">Book on WhatsApp</button>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
