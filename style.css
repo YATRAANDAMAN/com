@@ -1,0 +1,56 @@
+body {margin:0;font-family:Arial;}
+
+header{
+display:flex;
+justify-content:space-between;
+padding:15px 40px;
+background:#002244;
+color:white;
+}
+
+header a{color:white;margin:0 10px;text-decoration:none;}
+
+.section{padding:60px 20px;text-align:center;}
+
+.swiper img{width:100%;height:500px;object-fit:cover;}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.package-card{
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+border-radius:10px;
+overflow:hidden;
+}
+
+.package-card img{width:100%;height:200px;object-fit:cover;}
+
+.package-card button{
+background:#002244;
+color:white;
+padding:10px;
+border:none;
+width:100%;
+}
+
+.activity-card{
+background:white;
+padding:10px;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+.contact form{
+display:flex;
+flex-direction:column;
+width:300px;
+margin:auto;
+}
+
+.contact input, .contact textarea{
+margin:10px 0;
+padding:10px;
+}
